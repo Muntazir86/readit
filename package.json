@@ -1,0 +1,53 @@
+{
+  "name": "Readit",
+  "version": "1.0.0",
+  "description": "A simple app to bookmark web links",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "watch": "nodemon --exec electron .",
+    "build": "electron-builder -w",
+    "release":"electron-builder -w -p 'onTagOrDraft'",
+    "win-cert": "electron-builder create-self-signed-cert -p muntazir86"
+  },
+  "repository": "https://github.com/Muntazir86/readit",
+  "homepage": "https://github.com/Muntazir86/readit",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Ghulam Shabbir",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^12.0.0",
+    "electron-builder": "^22.10.5"
+  },
+  "dependencies": {
+    "electron-window-state": "^5.0.3",
+    "nodemon": "^2.0.7"
+  },
+  "build": {
+    "appId": "com.muntazir86.readit",
+    "copyright": "Copyright 2021 muntazir86",
+    "publish":{
+      "provider": "github"
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    },
+    "win": {
+      "certificateFile": "private/muntazir86.pfx",
+      "certificatePassword": "",
+      "verifyUpdateCodeSignature": true,
+      "publisherName": "muntazir86"
+
+    },
+    "linux": {
+      "category": "Utility"
+    }
+  }
+}
